@@ -94,3 +94,22 @@ public class SelectSeatDetailActivity extends Activity {
 		this.TV_seatState.setText(selectSeat.getSeatState());
 	} 
 }
+
+
+static class ViewHolder{
+	ImageView imageView1;
+        TextView textView1;}
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+	ViewHolder holder;
+	if(convertView == null){
+		holder = new ViewHolder();
+		convertView=LayoutInflater.from(mContext).inflate(R.layout.listview_ item, null);
+		holder.imageViewl=(ImageView )convertView.findViewById(R.id.imageView1);
+		holder.textView1 = (TextView )convertView.findViewById(R.id.textl);
+		convertView.setTag(holder);
+	}else{
+		holder = (ViewHolder)convertView.getTag();}
+		holder.imageView 1.setImageResource(R.drawable.ic_ launcher);
+		holder.textView 1.setText(mData.get(position));
+	return convertView;}
